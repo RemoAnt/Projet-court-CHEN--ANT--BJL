@@ -38,7 +38,7 @@ void trajectoire()
 		E1.write(valDeBase - diff*coeff); 
 		E2.write(valDeBase + diff*coeff);
 	}
-	
+	// SI ON Y ARRIVE PAS FAIRE PAR PALIERS
 }
 	
 int main (void)
