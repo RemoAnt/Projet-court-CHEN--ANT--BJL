@@ -44,18 +44,19 @@ void trajectoire2() //fonction qui change le vitesse de chaque roue selon la dif
 	float diff = Photo1 - Photo2 ; //différence de luminosité reçue entre les deux capteurs centraux
 	float valDeBase = 0.4;
 	float coeff = 60;
-	float coeff2=60;
 	if (diff<0)
     {
-		//tourne vers capt2 (donc M1 > M2)
+		//tourne vers capt2 (donc M1 > M2) 
+		//tourne à gauche
 		E1.write(valDeBase + diff*coeff); 
-		E2.write(valDeBase );
+		E2.write(valDeBase - diff*coeff);
 	} 
     else 
     {
 		//tourne vers capt1 (donc M1 > M2)
-		E1.write(valDeBase + diff*coeff2); 
-		E2.write(valDeBase - diff*coeff2);
+		//tourne à droite
+		E1.write(valDeBase + diff*coeff); 
+		E2.write(valDeBase - diff*coeff);
 	}
 }
 
